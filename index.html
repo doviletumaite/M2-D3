@@ -55,6 +55,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
 
     <!-- Bootstrap CSS -->
@@ -101,14 +102,14 @@
         </div>
       </nav>
 
-      <div class="jumbotron">
+      <div class="jumbotron section">
         <h1 class="display-4">Hello, travellers!</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </div>
-<div class="cointainer-fluid">
+<div class="cointainer-fluid section">
       <div class="row">
         <div class="col-12"> <h1 style="text-align: center">Deal of the Week</h1></div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3"> 
@@ -152,7 +153,7 @@
           </div> </div> </div>
           </div>
 </div>
-<div class="cointainer ">
+<div class="cointainer section">
           <div class="row px-5">
             <div class="col-12"> <h1 style="text-align: center">Welcome Summer</h1></div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 shadow-lg p-3 mb-4 bg-white rounded"> DESTINATION </div>
@@ -294,11 +295,25 @@
     
   </body>
   <script>
+    window.onload =function {
+      addToggleButtons()
+    }
 
-function collAndRe() {
-let bottom = document.getElementById("btone")
-bottom.addEventListener
-}
+function addToggleButtons() {
+                
+                for (let section of document.querySelectorAll("section")) {
+                    
+                    section.children[0].classList.add("collapse")
+                    section.children[0].classList.add("show")
+                    
+                    section.innerHTML = `
+                        <button class='btn btn-outline-light toggle-btn' data-bs-toggle="collapse" data-bs-target="#${section.id} > div">
+                            Show/hide section
+                        </button>
+                    ` + section.innerHTML
+                    
+                }
+            }
 
   </script>
 </html>
