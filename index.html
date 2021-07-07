@@ -64,8 +64,8 @@
     <title>Travel Agency</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-blue"> <img  src="im.png" alt="image">
-        <a class="navbar-brand" href="#">Travel Agency</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <a class="navbar-brand" href="#"><img src="im.png" alt="image" style="height: 40px;">Travel Agency</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -101,57 +101,61 @@
           </form>
         </div>
       </nav>
-<section>
+
+      <div class="container">
       <div class="jumbotron ">
         <h1 class="display-4">Hello, travellers!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti obcaecati itaque ab, dolor soluta explicabo harum ut eum doloribus omnis consequuntur illo similique. Doloribus similique ad delectus fugiat quidem?</p>
+        <hr class="my-4"/>
+        <p>Choose the Happiness!</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
-<div class="cointainer-fluid section">
-      <div class="row">
-        <div class="col-12"> <h1 style="text-align: center">Deal of the Week</h1></div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3"> 
+      </div>  </div>
+<section class="my-4 d-flex flex-column" id="week-deal">
+   
+        <h2 style="text-align: center">Deal of the Week</h2>
+      <button type="button" class="btn btn-light align-self-center mb-4" data-toggle="collapse" data-target="#collapseWeekDeal" aria-expanded="false" aria-controls="collapseExample">Collapse</button>
+      <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 collapse show" id="collapseWeekDeal">
+        <div class="col mb-4">
           <div class="card">
             <img src="https://picsum.photos/300/200/" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">New York</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                     the card's content.</p>
-                <a href="#" class="btn btn-primary" id="btone">Go somewhere</a>
+                <a href="#" class="btn btn-primary" id="btone"> BOOK NOW</a>
+                
+           </div>
             </div>
-            </div>
-          S
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">   <div class="card">
+          </div>
+       
+        <div class="col mb-4">   <div class="card">
           <img src="https://picsum.photos/300/200/" class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title">Parigi </h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                   the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary"id="btone">BOOK NOW</a>
           </div>
           </div></div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">  <div class="card">
+        <div class="col mb-4">  <div class="card">
           <img src="https://picsum.photos/300/200/" class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title">Roma</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                   the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary"id="btone">BOOK NOW</a>
           </div>
           </div> </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3"> <div class="card">
+        <div class="col mb-4"> <div class="card">
           <img src="https://picsum.photos/300/200/" class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title">Tokyo</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                   the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary"id="btone">BOOK NOW</a>
           </div>
+          </div> </div> 
           </div> </div> </div>
-          </div>
 </div>
 <div class="cointainer section">
           <div class="row px-5">
@@ -314,30 +318,43 @@
     
   </body>
   <script>
-    window.onload = function {
-      addToggleButtons()
-    }
+    window.onload = function (){
+     const addBadge = function () {
+       const cardsTitles = document.querySelectorAll("#welcome-summer .card-title");
+       cardsTitles.forEach((title) => {
+         const span = `<span class="badge badge-pill badge-danger">HOT</span>`;
+         title.innerHTML += span;
+       });
+     };
+     addBadge();
+     const removeCards = function () {
+       const cards = document.querySelectorAll(".card");
+       cards.forEach((card) => {
+         card.remove();
+       });
+     };
+    };
 
-function addToggleButtons() {
+//function addToggleButtons() {
                 
-                for (let section of document.querySelectorAll("section")) {
+  //              for (let section of document.querySelectorAll("section")) {
                     
-                    section.children[0].classList.add("collapse")
-                    section.children[0].classList.add("show")
+    //                section.children[0].classList.add("collapse")
+      //              section.children[0].classList.add("show")
                     
-                    section.innerHTML = `
-                        <button class='btn btn-outline-light toggle-btn' data-bs-toggle="collapse" data-bs-target="#${section.id} > div">
-                            Show/hide section
-                        </button>
-                    ` + section.innerHTML
+        //            section.innerHTML = `
+          //              <button class='btn btn-outline-light toggle-btn' data-bs-toggle="collapse" data-bs-target="#${section.id} > div">
+            //                Show/hide section
+              //          </button>
+                //    ` + section.innerHTML
                     
-                }
-            }
+        //        }
+          //  }
 
           
-            $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+      //      $('#myModal').on('shown.bs.modal', function () {
+  //$('#myInput').trigger('focus')
+//})
 
 
           
